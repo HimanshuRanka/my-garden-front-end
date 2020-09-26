@@ -1,4 +1,4 @@
-#My Garden
+# My Garden
 This is the front end for MyGarden app by HAK
 
 ### Project Timeline
