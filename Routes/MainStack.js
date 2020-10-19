@@ -8,7 +8,7 @@ import PlantDB from "../Screens/PlantDB";
 
 const MainStack = createStackNavigator();
 
-export default function (){
+const Navigator = () => {
     return(
         <NavigationContainer>
             {
@@ -18,12 +18,14 @@ export default function (){
                  But this is basically the file where like we create all the navigation stuff
                  */
             }
-            <MainStack.Navigator>
-                <MainStack.Screen name={"Login"} component={Login} />
-                <MainStack.Screen name={"MyGarden"} component={MyGarden} />
-                <MainStack.Screen name={"PlantInfo"} component={PlantInfo} />
-                <MainStack.Screen name={"PlantDB"} component={PlantDB} />
+            <MainStack.Navigator initialRouteName="Login">
+                <MainStack.Screen name="Login" component={Login} />
+                <MainStack.Screen name="MyGarden" component={MyGarden} />
+                <MainStack.Screen name="PlantInfo" component={PlantInfo} />
+                <MainStack.Screen name="PlantDB" component={PlantDB} />
             </MainStack.Navigator>
         </NavigationContainer>
     )
-}
+};
+
+export default Navigator;

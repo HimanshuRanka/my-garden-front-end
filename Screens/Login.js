@@ -1,19 +1,30 @@
 import React, {useState} from 'react';
-import {FlatList, StyleSheet, Text, TouchableOpacity, View, TextInput} from 'react-native';
-import Card from "../Shared/Card";
-import {Button} from "react-native-web";
+import {FlatList, StyleSheet, Text, TouchableOpacity, View, TextInput, Button} from 'react-native';
 
 
-export default function Login({navigation}) {
+
+
+const Login = ({navigation}) => {
+
+    const [colr, setColr] = useState('#eeeeee');
+
+    const pressHandler = (us, ps) => {
+        //sends the us ps to backend to store and verify
+        setColr('#333333');
+    };
+
     return(
-        <View style={styles.Login}>
+        <View>
             {/*not sure how text inputs work, need to look into that*/}
-            <TextInput style={styles.Input}>username: </TextInput>
-            <TextInput style={styles.Input}>password: </TextInput>
-            <Button onPress={}>Submit</Button>
+            <TextInput> </TextInput>
+            <TextInput> </TextInput>
+            <Button
+                title="LOGIN"
+                onPress={() => navigation.navigate('MyGarden')}
+            />
         </View>
     )
-}
+};
 
 const styles = StyleSheet.create({
     Login: {
@@ -25,4 +36,6 @@ const styles = StyleSheet.create({
     Text: {
 
     },
-})
+});
+
+export default Login;

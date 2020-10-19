@@ -1,27 +1,35 @@
 import React, {useState} from 'react';
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import Card from "../Shared/Card";
-import {Button} from "react-native-web";
+import {FlatList, StyleSheet, Text, TouchableOpacity, View, Button} from 'react-native';
+
 import PlantCard from "../Shared/PlantCard";
 
-export default function MyGarden({navigation}) {
+const MyGarden = ({navigation}) => {
 
-    const [plants, setPlants] = useState({});
+    const [plants, setPlants] = useState(['SUCCULENT', 'TREE', 'PLANT']);
+
+    const addPlant = () => {
+        let table = [...plants];
+        table.push("PLANT");
+        setPlants(table);
+    };
 
     return (
         <View>
             <FlatList
                 data={plants}
                 renderItem={({item}) => (
-                    <TouchableOpacity onPress={() => navigation.navigate('PlantInfo', {id: item.id})}>
+                    <TouchableOpacity onPress={() => navigation.navigate('PlantInfo')}>
                         <PlantCard>
-                            <Text>{item.name}</Text>
+                            <Text>{item}</Text>
                         </PlantCard>
                     </TouchableOpacity>
                 )}
             />
-            <Button onPress={() => navigation.navigate('PlantDB')} title='Add Plant'/>
+            <Button onPress={addPlant} title='Add Plant'/>
         </View>
     )
 
-}
+};
+
+export default MyGarden;
+
