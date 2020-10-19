@@ -1,4 +1,4 @@
-#My Garden
+# My Garden
 This is the front end for MyGarden app by HAK
 
 ### Project Timeline
@@ -27,7 +27,6 @@ npm install @react-navigation/native
 ```
 Once you clone the repo on your own system and cd into the right directory run
 ```shell script
-expo install  
 expo start
 ```
 Then download the expo app on your phone. Use it to scan the 
